@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abdallah Abdelmawgood | Software Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #888;
+        }
+
+        .highlight {
+            color: #3b82f6;
+        }
+
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #000;
+            border-bottom: 1px solid #1f1f1f;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content span {
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1.05;
+
+            margin: 15px 0;
+        }
+
+        .hero-content h2 {
+            font-size: 30px;
+            color: #3b82f6;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+
+            color: #999;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =========================
+            BUTTONS
+        ========================== */
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #3b82f6;
+            color: #3b82f6;
+        }
+
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: contain;
+            display: block;
+        }
+
+
+        .about {
+            border-top: 1px solid #151515;
+            border-bottom: 1px solid #151515;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #999;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #0b0b0b;
+            border: 1px solid #202020;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+        }
+
+        .skill-card h3 {
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .skill-card li {
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .skill-card li::before {
+            content: "▹ ";
+            color: #3b82f6;
+        }
+
+
+        .services {
+            background: #050505;
+            border-top: 1px solid #151515;
+            border-bottom: 1px solid #151515;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #0b0b0b;
+            border: 1px solid #202020;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+        }
+
+        .service-number {
+            color: #3b82f6;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #999;
+        }
+
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0b0b0b;
+            border: 1px solid #202020;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+        }
+
+        .project-number {
+            color: #3b82f6;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .technologies {
+            color: #3b82f6;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .project-card p {
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .project-card h4 {
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project-card li {
+            color: #999;
+            margin-bottom: 6px;
+        }
+
+        .project-card li::before {
+            content: "✓ ";
+            color: #3b82f6;
+        }
+
+
+        .education {
+            background: #050505;
+
+            border-top: 1px solid #151515;
+            border-bottom: 1px solid #151515;
+        }
+
+        .education-card {
+            max-width: 850px;
+            margin: 0 auto 25px;
+            background: #0b0b0b;
+            border: 1px solid #202020;
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .education-card h3 {
+            color: #3b82f6;
+            margin-bottom: 8px;
+            display:flex;
+        }
+
+        .education-card p {
+            color: #999;
+        }
+        
+        .date {
+            margin-left: auto;
+            color: #999;
+        }
+
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+
+        footer {
+            padding: 25px 0;
+            text-align: center;
+            border-top: 1px solid #202020;
+            color: #666;
+        }
+
+
+        @media (max-width: 1000px) {
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .skills-grid,
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+
+            .hero-content h2 {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">3bdlmwgood</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <span>Hello, I'm</span>
+                <h1>
+                    Abdallah<br>Abdelmawgood
+                </h1>
+                <h2>
+                    Software Engineer
+                </h2>
+                <p>
+                    I build reliable and practical web applications
+                    using .NET, Angular, and modern web technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Projects
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+                </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="Images/Profile_image.png" alt="Abdallah Abdelmawgood" class="profile-image">
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    About <span class="highlight">Me</span>
+                </h2>
+                <p>
+                    Who I am and what I do
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <p>
+                    I am a Computer Science student and Full Stack .NET
+                    Developer passionate about building reliable,
+                    user-friendly web applications.
+                </p>
+                <p>
+                    I specialize in backend development using C#,
+                    ASP.NET Core, Entity Framework Core, and SQL Server,
+                    while also building responsive frontend interfaces
+                    using Angular, HTML, CSS, and TypeScript.
+                </p>
+                <p>
+                    Through academic projects, training, and personal
+                    projects, I have developed practical experience in
+                    database design, RESTful APIs, CRUD applications,
+                    authentication concepts, and software development
+                    fundamentals.
+                </p>
+                <p>
+                    I focus on writing clean, maintainable code and
+                    understanding the business requirements behind each
+                    project.
+                </p>
+                <p>
+                    My goal is to help businesses and individuals turn
+                    their ideas into functional, scalable, and easy-to-use
+                    web applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    Main <span class="highlight">Skills</span>
+                </h2>
+                <p>
+                    Technologies and tools I work with
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>
+                        Backend Development
+                    </h3>
+                    <ul>
+                        <li>C#</li>
+                        <li>ASP.NET Core</li>
+                        <li>LINQ</li>
+                        <li>ADO.NET</li>
+                        <li>Entity Framework Core</li>
+                        <li>ASP.NET Core Web API</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>
+                        Frontend Development
+                    </h3>
+                    <ul>
+                        
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Tailwind</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Angular</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>
+                        Database
+                    </h3>
+                    <ul>
+                        <li>ANSI SQL</li>
+                        <li>SQL Server</li>
+                        <li>T-SQL</li>
+                        <li>Database Design</li>
+                        <li>ERD</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>
+                        Development Tools
+                    </h3>
+                    <ul>
+                        <li>Visual Studio</li>
+                        <li>VS Code</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>SQL Server Management Studio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    Services I <span class="highlight">Offer</span>
+                </h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">
+                        01
+                    </div>
+                    <h3>
+                        ASP.NET Core Web Development
+                    </h3>
+                    <p>
+                        Building reliable and maintainable web
+                        applications using C# and ASP.NET Core.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">
+                        02
+                    </div>
+                    <h3>
+                        RESTful API Development
+                    </h3>
+                    <p>
+                        Creating APIs that allow frontend applications
+                        and other systems to communicate efficiently
+                        with backend services.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">
+                        03
+                    </div>
+                    <h3>
+                        Database Development
+                    </h3>
+                    <p>
+                        Designing SQL Server databases, relationships,
+                        queries, stored procedures, views, functions,
+                        and optimized database structures.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">
+                        04
+                    </div>
+                    <h3>
+                        Desktop Applications
+                    </h3>
+                    <p>
+                        Developing Windows Forms applications using C# 
+                        with database integration through 
+                        ADO.NET and Entity Framework Core.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">
+                        05
+                    </div>
+                    <h3>
+                        Full Stack Web Applications
+                    </h3>
+                    <p>
+                        Building web applications using ASP.NET Core
+                        for the backend and Angular for the frontend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    My <span class="highlight">Projects</span>
+                </h2>
+                <p>
+                    Some of my academic and personal projects
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-number">
+                        01 - WEB API
+                    </div>
+                    <h3>
+                        Student Management System
+                    </h3>
+                    <div class="technologies">
+                        C# • ASP.NET Core Web API • EF Core • SQL Server
+                    </div>
+                    <p>
+                        A student management application designed to
+                        manage student information through a RESTful
+                        Web API.
+                    </p>
+                    <h4>
+                        Key Features
+                    </h4>
+                    <ul>
+                        <li>Create students</li>
+                        <li>View student information</li>
+                        <li>Update student information</li>
+                        <li>Delete students</li>
+                        <li>Database integration</li>
+                        <li>RESTful API endpoints</li>
+                        <li>Entity Framework Core data access</li>
+                    </ul>
+                    <h4>
+                        My Role
+                    </h4>
+                    <p>
+                        Designed and implemented the backend API,
+                        database interaction, and CRUD operations.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">
+                        02 - DATABASE
+                    </div>
+                    <h3>
+                        Library Management System
+                    </h3>
+                    <div class="technologies">
+                        C# • SQL Server • Entity Framework Core
+                    </div>
+                    <p>
+                        A database-driven library management system
+                        designed to manage books, users, employees,
+                        categories, publishers, shelves, and borrowing
+                        operations.
+                    </p>
+                    <h4>
+                        Key Features
+                    </h4>
+                    <ul>
+                        <li>Book management</li>
+                        <li>Category management</li>
+                        <li>Publisher management</li>
+                        <li>User management</li>
+                        <li>Employee management</li>
+                        <li>Book borrowing and returning</li>
+                        <li>Database relationships</li>
+                    </ul>
+                    <h4>
+                        My Role
+                    </h4>
+                    <p>
+                        Designed the database structure and implemented
+                        database operations, relationships, queries,
+                        stored procedures, functions, and triggers.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">
+                        03 - DESKTOP
+                    </div>
+                    <h3>
+                        Personal Budgeting Application
+                    </h3>
+                    <div class="technologies">
+                        C# • WinForms • SQLite
+                    </div>
+                    <p>
+                        A desktop application designed to help users
+                        manage their personal income and expenses.
+                    </p>
+                    <h4>
+                        Key Features
+                    </h4>
+                    <ul>
+                        <li>Add income</li>
+                        <li>Record expenses</li>
+                        <li>Track financial transactions</li>
+                        <li>Store data using SQLite</li>
+                        <li>Simple user-friendly interface</li>
+                    </ul>
+                    <h4>
+                        My Role
+                    </h4>
+                    <p>
+                        Developed the application logic, user interface,
+                        and database integration.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">
+                        04 - DATABASE
+                    </div>
+                    <h3>
+                        Clinic Management Database
+                    </h3>
+                    <div class="technologies">
+                        SQL Server • T-SQL • Database Design
+                    </div>
+                    <p>
+                        A database project designed to organize the main
+                        operations of a medical clinic.
+                    </p>
+                    <h4>
+                        Main Entities
+                    </h4>
+                    <ul>
+                        <li>Patients</li>
+                        <li>Doctors</li>
+                        <li>Patient Files</li>
+                        <li>Appointments</li>
+                        <li>Payments</li>
+                    </ul>
+                    <h4>
+                        My Role
+                    </h4>
+                    <p>
+                        Designed the database structure, relationships,
+                        and Entity-Relationship Diagram.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    Education & <span class="highlight">Training</span>
+                </h2>
+            </div>
+            <div class="education-card">
+                <h3>
+                    B.Sc. in Computers and Artificial Intelligence
+                    <span class="date">Sep 2023 - Jun 2027</span>
+                </h3>
+                <p>
+                    Faculty of Computers and Artificial Intelligence -Cairo University
+                </p>
+            </div>
+            
+            <div class="education-card">
+                
+                <h3>
+                    DEPI - Digital Egypt Pioneers Initiative
+                    <span class="date">Jul 2026 - Jan 2027</span>
+                </h3>
+                
+                <p>
+                    Full Stack .NET Development Training
+                </p>
+                
+                <br>
+                
+                <p>
+                    Focused on C#, OOP, SQL Server, Entity Framework Core,
+                    ASP.NET Core, Web APIs, HTML5, CSS3, JavaScript, Git & GitHub.
+                </p>
+                
+            </div>
+            
+            <div class="education-card">
+                
+                <h3>
+                    ITI - Information Technology Institute 
+                    <span class="date">Aug 2026 - Sep 2026</span>
+                </h3>
+                
+                <p>
+                    Software Engineering & Agentic AI Development - Summer Code Camp
+                </p>
+                
+                <br>
+                
+                <p>
+                    Focused on C#, OOP, SQL Server, Entity Framework Core,
+                    ASP.NET MVC,  Agentic AI Development
+                </p>
+                
+            </div>
+            
+            
+            <div class="education-card">
+                
+                <h3>
+                    NTI - National Telecommunication Institute (NTI) 
+                    <span class="date">Jul 2026 - Aug 2026</span>
+                </h3>
+                <p>
+                    Data Analytics - Summer Training
+                </p>
+                <br>
+                <p>
+                    Focused on Python, Data Cleaning, Data Visualization, 
+                    SQL Server, Power BI
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    Let's Build Your Next
+                    <span class="highlight">Web Application</span>
+                </h2>
+            </div>
+            <div class="contact-content">
+                <p>
+                    Have an idea for a web application or need help
+                    developing an existing project?
+                </p>
+                <p>
+                    Let's discuss your requirements and turn your idea
+                    into a practical, reliable solution.
+                </p>
+                <div class="contact-links">
+                    <a
+                        href="mailto:3bdlmwgood@gmail.com"
+                        class="btn btn-primary">
+                        Email Me
+                    </a>
+                    <a
+                        href="https://github.com/3bdlmwgood"
+                        target="_blank"
+                        class="btn btn-outline">
+                        GitHub
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/3bdlmwgood"
+                        target="_blank"
+                        class="btn btn-outline">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <p>
+            © 2026 3bdlmwgood.
+        </p>
+
+    </footer>
+</body>
+
+</html>
